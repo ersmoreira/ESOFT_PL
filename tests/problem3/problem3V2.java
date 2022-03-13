@@ -1,11 +1,11 @@
 package problem3;
 
 import implementation.Student;
-import implementation.StudentList;
+import implementation.StudentListV2;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class problem3 {
+public class problem3V2 {
 
     @Test
     public void sortStudentsByNumberAscWithSeveralElementsIncorrectlyOrdered() {
@@ -75,7 +75,7 @@ public class problem3 {
     @Test
     public void createStudentList() {
         //Act
-        StudentList stList = new StudentList();
+        StudentListV2 stList = new StudentListV2();
         Student[] result = stList.toArray();
         //Assert
         Assert.assertEquals(0, result.length);
@@ -90,7 +90,7 @@ public class problem3 {
         Student[] students = {student1, student2, student3};
         Student[] expected = {student1, student2, student3};
         //Act
-        StudentList stList = new StudentList(students);
+        StudentListV2 stList = new StudentListV2(students);
         students[2] = student1;
         Student[] result = stList.toArray();
         //Assert
@@ -108,7 +108,7 @@ public class problem3 {
         Student student3 = new Student(1200086, "Silva");
         student3.doEvaluation(15);
         Student[] students = {student1, student2, student3};
-        StudentList stList = new StudentList(students);
+        StudentListV2 stList = new StudentListV2(students);
         Student[] expected = {student2, student3, student1};
         //Act
         stList.sortByGradeDesc();
@@ -173,7 +173,7 @@ public class problem3 {
         //Arrange
         Student student1 = new Student(1200054, "Moreira");
         Student student2 = new Student(1200145, "Sampaio");
-        StudentList stList = new StudentList();
+        StudentListV2 stList = new StudentListV2();
         stList.add(student1);
         //Act
         boolean result = stList.add(student2);
@@ -187,7 +187,7 @@ public class problem3 {
     public void addingSameStudentTwice() {
         //Arrange
         Student student1 = new Student(1200054, "Moreira");
-        StudentList stList = new StudentList();
+        StudentListV2 stList = new StudentListV2();
         stList.add(student1);
         //Act
         boolean result = stList.add(student1);
@@ -202,7 +202,7 @@ public class problem3 {
         //Arrange
         Student student1 = new Student(1200054, "Moreira");
         Student student2 = new Student(1200054, "Sampaio");
-        StudentList stList = new StudentList();
+        StudentListV2 stList = new StudentListV2();
         stList.add(student1);
         //Act
         boolean result = stList.add(student2);
@@ -216,7 +216,7 @@ public class problem3 {
     public void addingNull() {
         //Arrange
         Student student1 = new Student(1200054, "Moreira");
-        StudentList stList = new StudentList();
+        StudentListV2 stList = new StudentListV2();
         stList.add(student1);
         //Act
         boolean result = stList.add(null);
@@ -236,7 +236,7 @@ public class problem3 {
         Student student5 = new Student(1200054, "Maria");
         Student[] all = {student1, student2, student3, student4, student5};
         Student[] expected = {student1, student2, student3, student5};
-        StudentList stList = new StudentList(all);
+        StudentListV2 stList = new StudentListV2(all);
         //Act
         boolean result = stList.remove(student4);
         Student[] content = stList.toArray();
@@ -249,7 +249,7 @@ public class problem3 {
     public void removingSameStudentTwice() {
         //Arrange
         Student student1 = new Student(1200054, "Moreira");
-        StudentList stList = new StudentList();
+        StudentListV2 stList = new StudentListV2();
         stList.add(student1);
         //Act
         boolean result1 = stList.remove(student1);
