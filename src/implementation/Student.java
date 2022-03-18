@@ -46,6 +46,10 @@ public class Student {
         return this.number;
     }
 
+    public String getName(){
+        return this.name;
+    }
+
     public int getGrade() {
         return this.grade;
     }
